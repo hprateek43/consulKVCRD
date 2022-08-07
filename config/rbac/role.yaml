@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - consul.panw.com
+  resources:
+  - consulkvs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - consul.panw.com
+  resources:
+  - consulkvs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - consul.panw.com
+  resources:
+  - consulkvs/status
+  verbs:
+  - get
+  - patch
+  - update

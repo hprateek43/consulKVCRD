@@ -1,0 +1,20 @@
+# permissions for end users to view consulkvs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: consulkv-viewer-role
+rules:
+- apiGroups:
+  - consul.panw.com
+  resources:
+  - consulkvs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - consul.panw.com
+  resources:
+  - consulkvs/status
+  verbs:
+  - get
