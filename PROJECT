@@ -1,0 +1,19 @@
+domain: panw.com
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: consulkvcrd
+repo: code.pan.run/prisma-saas/ConsulKVCRD
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: panw.com
+  group: consul
+  kind: ConsulKV
+  path: code.pan.run/prisma-saas/ConsulKVCRD/api/v1alpha1
+  version: v1alpha1
+version: "3"

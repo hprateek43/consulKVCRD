@@ -1,0 +1,22 @@
+apiVersion: consul.panw.com/v1alpha1
+kind: ConsulKV
+metadata:
+  name: consulkv-tenant
+spec:
+  keys: |
+    test:
+      r45betavpc1:
+        config:
+          v1:
+            dss:
+              async_flow: "false"
+              new_path: "test"
+              new_key: "test_new"
+        global:
+          fe:
+            version: "1234"
+            worker: "true"
+        zendesk: "true"
+        enabled: "true"
+        path: "v1"
+        path2: "v22"

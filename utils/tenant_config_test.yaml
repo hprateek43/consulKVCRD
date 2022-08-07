@@ -1,0 +1,120 @@
+tenant:
+  greystg2:
+    analytics:
+      domain-count:
+        ? ''
+        : null
+      people-sort:
+        ? ''
+        : null
+    apilayer:
+      HOST: api11.dataservice.cs.stg
+      PORT: '8080'
+      VERSION: '1.1'
+      WRITE_TO_ES_1X: 'false'
+      WRITE_TO_ES_7X: 'true'
+    config:
+      v1:
+        REMEDIATION_DIGEST_EMAIL_FREQUENCY: HOURLY
+        apps:
+          gdrivev2:
+            backward_scan: 'true'
+        data-pattern:
+          data_policy_email_digest: 'true'
+          legacy_risks_disabled: 'true'
+          resolve_incidents: 'true'
+          resolve_risks: 'false'
+          save_pattern_results: 'true'
+          save_po_features_to_fo: 'true'
+        data_patterns_scan_enabled: 'true'
+        dp-scan:
+          return-aperture-results-details: 'false'
+          return-dss-results: 'true'
+          submit-to-aperture-engine: 'false'
+          submit-to-dss-engine: 'true'
+        dss:
+          async_enabled: 'false'
+          dss-enabled: 'true'
+        fe:
+          bitbucket:
+            enabled: 'true'
+          data_violations:
+            enabled: 'true'
+          debug_mode: 'true'
+          dlp_licensing:
+            show_prompt: 'false'
+          gamma:
+            enabled: 'false'
+            violations: 'true'
+          gdrivev2:
+            ? ''
+            : null
+            enabled: 'true'
+          github_marketplace:
+            enabled: 'True'
+          jira:
+            enabled: 'true'
+          notifications:
+            ? ''
+            : null
+            app: slackstandard
+          pan_sso:
+            enabled: 'False'
+          slackenterprise:
+            enabled: 'true'
+          slackenterprise_bot:
+            enabled: 'true'
+          slackstandard:
+            enabled: 'true'
+          zendesk:
+            ? ''
+            : null
+            enabled: 'true'
+          zoom:
+            enabled: 'true'
+        incidents:
+          read_from_incidents_all: 'true'
+          write_to_incidents_all: 'true'
+        versions:
+          worker_tag: es7x
+        wfm:
+          malware_analysis_status_enabled: 'true'
+        wildfire_cache_service_enabled: 'true'
+    database:
+      elasticsearch:
+        CLUSTER_NAME: stg2-elasticsearch7-1
+        ES_QUERY_HOST: 10.3.0.76
+        QUERY_HOST: null
+        QUERY_PORT: '9200'
+        TRANSPORT_PORT: '9300'
+      kafka:
+        BOOTSTRAP_SERVERS: kafka2-1.kafka.cs.stg:9092,kafka2-2.kafka.cs.stg:9092,kafka2-3.kafka.cs.stg:9092
+        CLUSTER_NUMBER: '1'
+      mongodb:
+        MONGODB_HOST: rs1/rs1-1,rs1-2,rs1-3
+        MONGODB_TENANTDB_PWD: ENC(NxKYH0wIAg3V+kPD8bzlyewe/jp1VcbD+nRjOKaX42FFZDRobSZEKA==)
+        MONGODB_TENANTDB_USER: ENC(v2eb9nb13brZGSKmvV5WDWZZVv1JzutO)
+      postgres:
+        POSTGRES_DB_NAME: LIT6244
+        POSTGRES_HOST: lit-6244.cuip3y07n3ju.us-east-1.rds.amazonaws.com
+        POSTGRES_PORT: '5432'
+        POSTGRES_PWD: ENC(2Q5/APZA/3uVYTofsIoM4o8GOy8ySOh2sbb2EDQIl5gbIaGO8vCQ0Q==)
+        POSTGRES_SCHEMA_NAME: cs_greystg2
+        POSTGRES_USER: ENC(zvjqAa6m1LGZCULv6cyVCOWcU6iXfTrUZY8snDLUDuk=)
+      sharded_mongodb:
+        MONGODB_AUTH_DB_NAME: cs_greystg2
+        MONGODB_HOST: dpmongos0,dpmongos1,dpmongos2
+        MONGODB_TENANTDB_FORCE_PRIMARY_READ: 'false'
+        MONGODB_TENANTDB_NAME: cs_greystg2
+        MONGODB_TENANTDB_PWD: ENC(MEDDQex2NqMVQNO1MgCWWLAs47kcAGDshPms3oY3W8WTQxF4x4We6g==)
+        MONGODB_TENANTDB_SSL_ENABLED: 'true'
+        MONGODB_TENANTDB_USER: ENC(Z4ZyrLVCwOJHu4YTEiSbB6B3Yy6CWRJI19YdxLpVvaQ=)
+        MONGODB_TENANTDB_WRITE_CONCERN: '1'
+    elasticsearch:
+      CLUSTER_NAME: stg2-elasticsearch7-1
+      ES_QUERY_HOST: 10.3.0.76
+      QUERY_HOST: null
+      QUERY_PORT: '9200'
+      TRANSPORT_PORT: '9300'
+    versions:
+      fe: 4.1.577-es7

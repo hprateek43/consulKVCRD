@@ -1,0 +1,24 @@
+# permissions for end users to edit consulkvs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: consulkv-editor-role
+rules:
+- apiGroups:
+  - consul.panw.com
+  resources:
+  - consulkvs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - consul.panw.com
+  resources:
+  - consulkvs/status
+  verbs:
+  - get
